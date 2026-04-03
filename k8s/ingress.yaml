@@ -1,0 +1,17 @@
+# k8s/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+ name: devops-lab-ingress
+spec:
+ rules:
+ - host: devops-lab.local
+   http:
+     paths:
+       - path: /
+         pathType: Prefix
+         backend:
+           service:
+             name: devops-lab-service
+             port:
+               number: 80

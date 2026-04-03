@@ -23,7 +23,10 @@ spec:
             - containerPort: 5000
           env:
             - name: APP_VERSION
-              value: "1.0.0"
+              valueFrom:
+                configMapKeyRef:
+                  name: devops-lab-config
+                  key: APP_VERSION
           resources:
             requests:
               memory: "64Mi"

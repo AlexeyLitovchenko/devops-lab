@@ -1,0 +1,7 @@
+# k8s/configmap.yaml
+apiVersion: v2
+kind: ConfigMap
+metadata:
+ name: devops-lab-config
+data:
+ APP_VERSION: "2.0.0"
